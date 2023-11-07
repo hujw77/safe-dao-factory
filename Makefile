@@ -1,4 +1,4 @@
-.PHONY: all fmt clean test salt
+.PHONY: all fmt clean test salt deploy deploy-dao
 .PHONY: tools foundry sync create3
 
 -include .env
@@ -8,6 +8,8 @@ fmt    :; @forge fmt
 clean  :; @forge clean
 test   :; @forge test
 deploy :; @forge script script/Deploy.s.sol:Deploy --chain ${chain-id} --broadcast --verify
+
+deploy-dao :; @forge script script/DeployDao.s.sol:DeployDao --chain ${chain-id} --broadcast --verify
 
 salt   :; @create3 -s 000000000000
 sync   :; @git submodule update --recursive

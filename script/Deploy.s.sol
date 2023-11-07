@@ -27,8 +27,8 @@ contract Deploy is Common {
         super.setUp();
 
         c3 = readC3();
-        ADDR = c3.readAddress(".ADDR");
-        SALT = c3.readBytes32(".SALT");
+        ADDR = c3.readAddress(".FACTORY_ADDR");
+        SALT = c3.readBytes32(".FACTORY_SALT");
     }
 
     function run() public broadcast {

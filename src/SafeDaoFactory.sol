@@ -3,8 +3,9 @@ pragma solidity 0.8.17;
 
 import {ICREATE3Factory} from "create3-deploy/src/ICREATE3Factory.sol";
 import {IGnosisSafeProxyFactory} from "./IGnosisSafeProxyFactory.sol";
+import {ISafeDaoFactory} from "./ISafeDaoFactory.sol";
 
-contract SafeDaoFactory {
+contract SafeDaoFactory is ISafeDaoFactory {
     event ProxyCreation(address proxy, address singleton);
 
     address public immutable CREATE3_FACTORY;
