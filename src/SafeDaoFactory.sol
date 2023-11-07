@@ -12,6 +12,9 @@ contract SafeDaoFactory {
     address public immutable SAFE_SINGLETON;
 
     constructor(address c3, address safe, address singleton) {
+        require(c3 != address(0), "za");
+        require(safe != address(0), "za");
+        require(singleton != address(0), "za");
         CREATE3_FACTORY = c3;
         SAFE_FACTORY = safe;
         SAFE_SINGLETON = singleton;

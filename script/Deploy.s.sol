@@ -4,10 +4,12 @@ pragma solidity ^0.8.13;
 import {Script, console2} from "forge-std/Script.sol";
 import {stdJson} from "forge-std/StdJson.sol";
 import {Common} from "create3-deploy/script/Common.s.sol";
+import {Chains} from "create3-deploy/script/Chains.sol";
 import {ScriptTools} from "create3-deploy/script/ScriptTools.sol";
 import {SafeDaoFactory} from "../src/SafeDaoFactory.sol";
 
 contract Deploy is Common {
+    using Chains for uint256;
     using stdJson for string;
     using ScriptTools for string;
 
@@ -23,9 +25,6 @@ contract Deploy is Common {
 
     function setUp() public override {
         super.setUp();
-        instanceId = vm.envOr("INSTANCE_ID", string("deploy.c"));
-        outputName = "deploy.a";
-        config = ScriptTools.readInput(instanceId);
 
         c3 = readC3();
         ADDR = c3.readAddress(".ADDR");
@@ -43,25 +42,25 @@ contract Deploy is Common {
         return vm.readFile(string(abi.encodePacked(root, "/script/", "c3.json")));
     }
 
-    function args() internal view returns (bytes memory) {
+    function args() internal returns (bytes memory) {
         (address SAFE_FACTORY, address SAFE_SINGLETON) = readSafeDeployment();
         return abi.encode(CREATE3_FACTORY_ADDR, SAFE_FACTORY, SAFE_SINGLETON);
     }
 
-    function readSafeDeployment() internal view returns (address proxyFactory, address gnosisSafe) {
-        uint256 chainId = getRootChainId();
+    function readSafeDeployment() internal returns (address proxyFactory, address gnosisSafe) {
+        uint256 chainId = vm.envOr("CHAIN_ID", block.chainid);
         string memory root = vm.projectRoot();
         string memory safeFolder = string(abi.encodePacked("/lib/safe-deployments/src/assets/", safeVerison, "/"));
-        string memory proxyFactoryFile = vm.readFile(string(abi.encodePacked(safeFolder, "proxy_factory.json")));
+        string memory proxyFactoryFile = vm.readFile(string(abi.encodePacked(root, safeFolder, "proxy_factory.json")));
         proxyFactory =
             proxyFactoryFile.readAddress(string(abi.encodePacked(".networkAddresses.", vm.toString(chainId))));
-        string gasisSafeJson;
+        string memory gasisSafeJson;
         if (chainId.isL2()) {
             gasisSafeJson = "gnosis_safe_l2.json";
         } else {
             gasisSafeJson = "gnosis_safe.json";
         }
-        string memory gnosisSageFile = vm.readFile(string(abi.encodePacked(safeFolder, gasisSafeJson)));
+        string memory gnosisSageFile = vm.readFile(string(abi.encodePacked(root, safeFolder, gasisSafeJson)));
         gnosisSafe = gnosisSageFile.readAddress(string(abi.encodePacked(".networkAddresses.", vm.toString(chainId))));
     }
 }
