@@ -40,8 +40,8 @@ contract DeployDao is Common {
 
         c3 = readC3();
         FACTORY = c3.readAddress(".FACTORY_ADDR");
-        ADDR = c3.readAddress(".MSGDAO_ADDR");
-        SALT = c3.readBytes32(".MSGDAO_SALT");
+        ADDR = c3.readAddress(string(abi.encodePacked(daoName, "_ADDR")));
+        SALT = c3.readBytes32(string(abi.encodePacked(daoName, "_SALT")));
     }
 
     function run() public {

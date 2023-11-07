@@ -1,5 +1,5 @@
 .PHONY: all fmt clean test salt deploy deploy-dao
-.PHONY: tools foundry sync create3
+.PHONY: tools foundry sync create3 verify
 
 -include .env
 
@@ -17,3 +17,5 @@ create3:; @cargo install --git https://github.com/darwinia-network/create3-deplo
 
 tools  :  foundry create3
 foundry:; curl -L https://foundry.paradigm.xyz | bash
+
+verify :; @bash ./bin/verify.sh
