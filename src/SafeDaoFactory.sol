@@ -29,10 +29,9 @@ contract SafeDaoFactory is ISafeDaoFactory {
         bytes memory creationCode = IGnosisSafeProxyFactory(SAFE_FACTORY).proxyCreationCode();
         bytes memory deploymentCode = abi.encodePacked(creationCode, uint256(uint160(SAFE_SINGLETON)));
         proxy = ICREATE3Factory(CREATE3_FACTORY).deploy(salt, deploymentCode);
-        if (initializer.length > 0) {
-            assembly {
-                if eq(call(gas(), proxy, 0, add(initializer, 0x20), mload(initializer), 0, 0), 0) { revert(0, 0) }
-            }
+        require(initializer.length > 0, "!setup");
+        assembly {
+            if eq(call(gas(), proxy, 0, add(initializer, 0x20), mload(initializer), 0, 0), 0) { revert(0, 0) }
         }
         emit ProxyCreation(proxy, SAFE_SINGLETON);
     }
