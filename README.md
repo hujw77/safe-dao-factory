@@ -1,6 +1,6 @@
 # <h1 align="center"> Safe Dao Factory </h1>
 
-Safe Dao Factory for easily deploying contracts to the same address on multiple chains, using CREATE3.
+Safe Dao Factory for easily deploying contracts to the same safe wallt address on multiple chains, using CREATE3.
 
 This repo inspired from https://github.com/darwinia-network/create3-deploy.
 
