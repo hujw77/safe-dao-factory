@@ -44,7 +44,7 @@ contract Deploy is Common {
 
     function args() internal returns (bytes memory) {
         (address SAFE_FACTORY, address SAFE_SINGLETON) = readSafeDeployment();
-        return abi.encode(CREATE3_FACTORY_ADDR, SAFE_FACTORY, SAFE_SINGLETON);
+        return abi.encode(SAFE_FACTORY, SAFE_SINGLETON);
     }
 
     function readSafeDeployment() internal returns (address proxyFactory, address gnosisSafe) {
