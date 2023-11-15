@@ -31,6 +31,7 @@ crab = "https://crab-rpc.darwinia.network"
 darwinia = "https://rpc.darwinia.network"
 arbitrum = "https://arb1.arbitrum.io/rpc"
 polygon = "https://polygon-rpc.com"
+mantle = "https://rpc.mantle.xyz"
 
 [etherscan]
 polygon = { key = "${ETHERSCAN_POLYGON_KEY}"}

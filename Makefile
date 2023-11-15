@@ -7,9 +7,9 @@ all    :; @forge build
 fmt    :; @forge fmt
 clean  :; @forge clean
 test   :; @forge test
-deploy :; @forge script script/Deploy.s.sol:Deploy --chain ${chain-id} --broadcast --verify
+deploy :; @forge script script/Deploy.s.sol:Deploy --chain ${chain-id} --broadcast --verify --legacy
 
-deploy-dao :; @forge script script/DeployDao.s.sol:DeployDao --chain ${chain-id} --broadcast --verify
+deploy-dao :; @forge script script/DeployDao.s.sol:DeployDao --chain ${chain-id} --broadcast --verify --legacy
 
 salt   :; @create3 -s 000000000000
 sync   :; @git submodule update --recursive
