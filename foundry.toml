@@ -34,6 +34,7 @@ polygon = "https://polygon-mainnet.infura.io/v3/${INFURA_KEY}"
 mantle = "https://rpc.mantle.xyz"
 ethereum = "https://mainnet.infura.io/v3/${INFURA_KEY}"
 sepolia = "https://sepolia.infura.io/v3/${INFURA_KEY}"
+optimism = "https://optimism-mainnet.infura.io/v3/${INFURA_KEY}"
 
 [etherscan]
 polygon = { key = "${ETHERSCAN_POLYGON_KEY}"}
@@ -43,3 +44,4 @@ arbitrum-sepolia = { key = "${ETHERSCAN_ARBITRUM_KEY}" }
 darwinia = { key = "${ETHERSCAN_DARWINIA_KEY}", url = "https://darwinia.api.subscan.io/api/scan/evm/contract/verifysource" }
 pangolin = { key = "${ETHERSCAN_DARWINIA_KEY}", url = "https://pangolin.api.subscan.io/api/scan/evm/contract/verifysource" }
 crab = { key = "${ETHERSCAN_DARWINIA_KEY}", url = "https://crab.api.subscan.io/api/scan/evm/contract/verifysource" }
+optimism = { key = "${ETHERSCAN_OPTIMISM_KEY}" }
