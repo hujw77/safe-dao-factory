@@ -37,6 +37,7 @@ sepolia = "https://sepolia.infura.io/v3/${INFURA_KEY}"
 optimism = "https://optimism-mainnet.infura.io/v3/${INFURA_KEY}"
 
 [etherscan]
+ethereum = { key = "${ETHERSCAN_API_KEY}"}
 polygon = { key = "${ETHERSCAN_POLYGON_KEY}"}
 arbitrum = { key = "${ETHERSCAN_ARBITRUM_KEY}" }
 arbitrum-goerli = { key = "${ETHERSCAN_ARBITRUM_KEY}" }
