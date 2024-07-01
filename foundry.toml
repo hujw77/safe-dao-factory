@@ -36,6 +36,7 @@ ethereum = "https://mainnet.infura.io/v3/${INFURA_KEY}"
 sepolia = "https://sepolia.infura.io/v3/${INFURA_KEY}"
 optimism = "https://optimism-mainnet.infura.io/v3/${INFURA_KEY}"
 base = "https://mainnet.base.org"
+base-sepolia = "https://sepolia.base.org"
 scroll = "https://rpc.scroll.io"
 
 [etherscan]
