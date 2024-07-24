@@ -38,6 +38,9 @@ optimism = "https://optimism-mainnet.infura.io/v3/${INFURA_KEY}"
 base = "https://mainnet.base.org"
 base-sepolia = "https://sepolia.base.org"
 scroll = "https://rpc.scroll.io"
+avalanche = "https://rpc.ankr.com/avalanche"
+gnosis = "https://rpc.ankr.com/gnosis"
+bsc = "https://rpc.ankr.com/bsc"
 
 [etherscan]
 ethereum = { key = "${ETHERSCAN_API_KEY}"}
