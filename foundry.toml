@@ -41,6 +41,10 @@ scroll = "https://rpc.scroll.io"
 avalanche = "https://rpc.ankr.com/avalanche"
 gnosis = "https://rpc.ankr.com/gnosis"
 bsc = "https://rpc.ankr.com/bsc"
+moonbeam = "https://rpc.api.moonbeam.network"
+linea = "https://1rpc.io/linea"
+astar = "https://rpc.startale.com/astar-zkevm"
+blast = "https://rpc.blast.io"
 
 [etherscan]
 ethereum = { key = "${ETHERSCAN_API_KEY}"}
