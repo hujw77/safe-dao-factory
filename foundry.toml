@@ -45,6 +45,7 @@ moonbeam = "https://rpc.api.moonbeam.network"
 linea = "https://1rpc.io/linea"
 astar = "https://rpc.startale.com/astar-zkevm"
 blast = "https://rpc.blast.io"
+zircuit = "https://zircuit1-mainnet.p2pify.com"
 
 [etherscan]
 ethereum = { key = "${ETHERSCAN_API_KEY}"}
