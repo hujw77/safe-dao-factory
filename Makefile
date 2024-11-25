@@ -7,7 +7,7 @@ all    :; @forge build
 fmt    :; @forge fmt
 clean  :; @forge clean
 test   :; @forge test
-deploy :; @forge script script/Deploy.s.sol:Deploy --chain ${chain-id} --broadcast --legacy # --verify 
+deploy :; @forge script script/Deploy.s.sol:Deploy --chain ${chain-id} --broadcast --legacy # --verify
 
 deploy-dao :; @forge script script/DeployDao.s.sol:DeployDao --chain ${chain-id} --broadcast --legacy # --verify
 

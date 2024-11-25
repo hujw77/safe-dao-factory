@@ -43,7 +43,10 @@ contract Deploy is Common {
     }
 
     function args() internal returns (bytes memory) {
-        (address SAFE_FACTORY, address SAFE_SINGLETON) = readSafeDeployment();
+        // (address SAFE_FACTORY, address SAFE_SINGLETON) = readSafeDeployment();
+		// eip 155
+        address SAFE_FACTORY = 0xC22834581EbC8527d974F8a1c97E1bEA4EF910BC; 
+		address SAFE_SINGLETON = 0xfb1bffC9d739B8D520DaF37dF666da4C687191EA;
         return abi.encode(SAFE_FACTORY, SAFE_SINGLETON);
     }
 

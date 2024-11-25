@@ -46,6 +46,7 @@ linea = "https://1rpc.io/linea"
 astar = "https://rpc.startale.com/astar-zkevm"
 blast = "https://rpc.blast.io"
 zircuit = "https://zircuit1-mainnet.p2pify.com"
+morph = "https://rpc.morphl2.io"
 
 [etherscan]
 ethereum = { key = "${ETHERSCAN_API_KEY}"}
@@ -58,3 +59,4 @@ pangolin = { key = "${ETHERSCAN_DARWINIA_KEY}", url = "https://pangolin.api.subs
 crab = { key = "${ETHERSCAN_DARWINIA_KEY}", url = "https://crab.api.subscan.io/api/scan/evm/contract/verifysource" }
 optimism = { key = "${ETHERSCAN_OPTIMISM_KEY}" }
 base = { key = "${ETHERSCAN_BASE_KEY}" }
+morph = { key = "xxx", url = "https://explorer.morphl2.io/api", chain = 2818}

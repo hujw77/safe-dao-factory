@@ -82,11 +82,12 @@ contract DeployDao is Common {
     }
 
     function readSafeDeployment() internal returns (address fallbackHandler) {
-        uint256 chainId = vm.envOr("CHAIN_ID", block.chainid);
-        string memory root = vm.projectRoot();
-        string memory safeFolder = string(abi.encodePacked("/lib/safe-deployments/src/assets/", safeVerison, "/"));
-        string memory file =
-            vm.readFile(string(abi.encodePacked(root, safeFolder, "compatibility_fallback_handler.json")));
-        fallbackHandler = file.readAddress(string(abi.encodePacked(".networkAddresses.", vm.toString(chainId))));
+		return 0x017062a1dE2FE6b99BE3d9d37841FeD19F573804;
+        // uint256 chainId = vm.envOr("CHAIN_ID", block.chainid);
+        // string memory root = vm.projectRoot();
+        // string memory safeFolder = string(abi.encodePacked("/lib/safe-deployments/src/assets/", safeVerison, "/"));
+        // string memory file =
+        //     vm.readFile(string(abi.encodePacked(root, safeFolder, "compatibility_fallback_handler.json")));
+        // fallbackHandler = file.readAddress(string(abi.encodePacked(".networkAddresses.", vm.toString(chainId))));
     }
 }
